@@ -19,28 +19,31 @@ export const Tabs = () => {
 
   return (
     <div className="tabs">
-      <ul className="menu-list">
-        <li
+      <div className="menu-list">
+        <button
           className={classNames('menu-item', { active: filter === 'all' })}
+          type="button"
           onClick={() => dispatch(setFilter('all'))}
         >
           All
-        </li>
-        <li
+        </button>
+        <button
           className={classNames('menu-item', { active: filter === 'pending' })}
+          type="button"
           onClick={() => dispatch(setFilter('pending'))}
         >
           Pending
-        </li>
-        <li
+        </button>
+        <button
           className={classNames('menu-item', {
             active: filter === 'completed',
           })}
+          type="button"
           onClick={() => dispatch(setFilter('completed'))}
         >
           Completed
-        </li>
-      </ul>
+        </button>
+      </div>
       <button type="button" onClick={handleClearAll} className="button">
         Clear All
       </button>
