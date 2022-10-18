@@ -21,25 +21,21 @@ export const Tabs = () => {
     <div className="tabs">
       <ul className="menu-list">
         <li
-          className={classNames(
-            filter === 'all' ? 'menu-item active' : 'menu-item'
-          )}
+          className={classNames('menu-item', { active: filter === 'all' })}
           onClick={() => dispatch(setFilter('all'))}
         >
           All
         </li>
         <li
-          className={classNames(
-            filter === 'pending' ? 'menu-item active' : 'menu-item'
-          )}
+          className={classNames('menu-item', { active: filter === 'pending' })}
           onClick={() => dispatch(setFilter('pending'))}
         >
           Pending
         </li>
         <li
-          className={classNames(
-            filter === 'completed' ? 'menu-item active' : 'menu-item'
-          )}
+          className={classNames('menu-item', {
+            active: filter === 'completed',
+          })}
           onClick={() => dispatch(setFilter('completed'))}
         >
           Completed
