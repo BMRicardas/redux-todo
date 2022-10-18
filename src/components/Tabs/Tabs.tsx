@@ -1,16 +1,13 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import classNames from 'classnames';
 
-import { removeAll, setFilter } from 'actions';
-import { AppState } from 'index';
+import { removeAll, setFilter } from 'features/todo/actionCreators';
+import { selectTodo } from 'features/todo/selectors';
 
 import './Tabs.scss';
 
 export const Tabs = () => {
-  const { filter } = useSelector((state: AppState) => state.todo);
+  const { filter } = useSelector(selectTodo);
   const dispatch = useDispatch();
 
   const handleClearAll = () => {
@@ -19,23 +16,23 @@ export const Tabs = () => {
 
   return (
     <div className="tabs">
-      <div className="menu-list">
+      <div className="tabs-list">
         <button
-          className={classNames('menu-item', { active: filter === 'all' })}
+          className={classNames('tab', { active: filter === 'all' })}
           type="button"
           onClick={() => dispatch(setFilter('all'))}
         >
           All
         </button>
         <button
-          className={classNames('menu-item', { active: filter === 'pending' })}
+          className={classNames('tab', { active: filter === 'pending' })}
           type="button"
           onClick={() => dispatch(setFilter('pending'))}
         >
           Pending
         </button>
         <button
-          className={classNames('menu-item', {
+          className={classNames('tab', {
             active: filter === 'completed',
           })}
           type="button"

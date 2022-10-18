@@ -1,7 +1,7 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { addTodo } from 'actions';
+import { addTodo } from 'features/todo/actionCreators';
 
 import './Form.scss';
 

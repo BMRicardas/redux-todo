@@ -1,13 +1,13 @@
 import { useSelector } from 'react-redux';
 
-import { AppState } from 'index';
+import { selectTodo } from 'features/todo/selectors';
 
 import { TodoItem } from '../TodoItem/TodoItem';
 
 import './TodoList.scss';
 
 export const TodoList = () => {
-  const { todos, filter } = useSelector((state: AppState) => state.todo);
+  const { todos, filter } = useSelector(selectTodo);
 
   const all = todos.map((todo) => (
     <TodoItem key={todo.id} id={todo.id} text={todo.text} done={todo.done} />

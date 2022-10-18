@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
-import { Filter } from 'reducers/todo';
+import { Filter } from 'features/todo/reducers';
 
 import { actions } from './actionTypes';
 

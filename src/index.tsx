@@ -5,7 +5,7 @@ import { legacy_createStore as createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from '@redux-devtools/extension';
 
 import { App } from './App';
-import { reducers } from './reducers';
+import { reducers } from './features';
 
 import './styles/index.scss';
 

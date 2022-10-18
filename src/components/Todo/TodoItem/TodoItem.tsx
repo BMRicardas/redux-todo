@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 
-import { removeTodo, toggleTodo } from 'actions';
+import { removeTodo, toggleTodo } from 'features/todo/actionCreators';
 
 import './TodoItem.scss';
 

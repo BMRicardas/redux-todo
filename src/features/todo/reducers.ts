@@ -1,4 +1,4 @@
-import { actions } from 'actions/actionTypes';
+import { actions } from 'features/todo/actionTypes';
 
 export type Filter = 'all' | 'pending' | 'completed';
 
