@@ -1,0 +1,40 @@
+.tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.menu-list {
+  display: flex;
+  gap: 1rem;
+}
+
+.menu-item {
+  cursor: pointer;
+
+  &.active {
+    color: blue;
+    border-bottom: 1px solid blue;
+  }
+}
+
+.button {
+  cursor: pointer;
+  border: 0;
+  color: white;
+  background: linear-gradient(to right, #005c97, #363795);
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+
+  &:hover {
+    background: #24c6dc;
+    background: linear-gradient(to right, #1488cc, #2b32b2);
+  }
+
+  &:active {
+    background: #1488cc;
+    background: linear-gradient(to right, #24c6dc, #514a9d);
+  }
+}
