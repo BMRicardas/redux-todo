@@ -11,7 +11,9 @@ export const TodoList = () => {
   const todos: Todo[] = useSelector(selectFilteredTodos);
 
   const renderedList = todos.map((todo) => (
-    <TodoItem key={todo.id} id={todo.id} text={todo.text} done={todo.done} />
+    <li key={todo.id}>
+      <TodoItem id={todo.id} text={todo.text} done={todo.done} />
+    </li>
   ));
 
   return <ul className="todo-list">{renderedList}</ul>;

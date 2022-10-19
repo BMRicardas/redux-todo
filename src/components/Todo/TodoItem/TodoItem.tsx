@@ -22,7 +22,7 @@ export const TodoItem = ({ id, text, done }: Props) => {
   };
 
   return (
-    <li className="todo-item">
+    <div className="todo-item">
       <div className="label">
         <input
           id={id.toString()}
@@ -37,6 +37,6 @@ export const TodoItem = ({ id, text, done }: Props) => {
       <button onClick={handleRemove} type="button" className="button">
         X
       </button>
-    </li>
+    </div>
   );
 };
