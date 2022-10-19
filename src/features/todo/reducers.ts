@@ -2,11 +2,10 @@ import { actions } from 'features/todo/actionTypes';
 
 export type Filter = 'all' | 'pending' | 'completed';
 
-interface Todo {
+export interface Todo {
   id: number;
   text: string;
   done: boolean;
-  filter: Filter;
 }
 
 interface TodosState {
