@@ -5,13 +5,16 @@ export const selectTodos = (state: AppState) => state.todo.todos;
 export const selectFilter = (state: AppState) => state.todo.filter;
 
 export const selectFilteredTodos = (state: AppState) => {
-  switch (selectFilter(state)) {
+  const filter = selectFilter(state);
+  const todos = selectTodos(state);
+
+  switch (filter) {
     case 'pending':
-      return selectTodos(state).filter((todo) => !todo.done);
+      return todos.filter((todo) => !todo.done);
     case 'completed':
-      return selectTodos(state).filter((todo) => todo.done);
+      return todos.filter((todo) => todo.done);
 
     default:
-      return selectTodos(state);
+      return todos;
   }
 };
