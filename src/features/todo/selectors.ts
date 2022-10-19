@@ -1,10 +1,12 @@
 import { AppState } from 'index';
 
-export const selectTodos = (state: AppState) => state.todo.todos;
+import { Todo } from './reducers';
 
-export const selectFilter = (state: AppState) => state.todo.filter;
+export const selectTodos = (state: AppState): Todo[] => state.todo.todos;
 
-export const selectFilteredTodos = (state: AppState) => {
+export const selectFilter = (state: AppState): string => state.todo.filter;
+
+export const selectFilteredTodos = (state: AppState): Todo[] => {
   const filter = selectFilter(state);
   const todos = selectTodos(state);
 
