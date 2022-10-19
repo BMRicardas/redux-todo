@@ -1,15 +1,17 @@
 import { AppState } from 'index';
 
-export const selectTodo = (state: AppState) => state.todo;
+export const selectTodos = (state: AppState) => state.todo.todos;
+
+export const selectFilter = (state: AppState) => state.todo.filter;
 
 export const selectFilteredTodos = (state: AppState) => {
-  switch (state.todo.filter) {
+  switch (selectFilter(state)) {
     case 'pending':
-      return state.todo.todos.filter((todo) => !todo.done);
+      return selectTodos(state).filter((todo) => !todo.done);
     case 'completed':
-      return state.todo.todos.filter((todo) => todo.done);
+      return selectTodos(state).filter((todo) => todo.done);
 
     default:
-      return state.todo.todos;
+      return selectTodos(state);
   }
 };
