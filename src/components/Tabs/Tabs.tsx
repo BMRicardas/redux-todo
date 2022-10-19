@@ -2,12 +2,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import classNames from 'classnames';
 
 import { removeAll, setFilter } from 'features/todo/actionCreators';
-import { selectTodo } from 'features/todo/selectors';
+import { selectFilter } from 'features/todo/selectors';
 
 import './Tabs.scss';
 
 export const Tabs = () => {
-  const { filter } = useSelector(selectTodo);
+  const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
 
   const handleClearAll = () => {

@@ -1,35 +1,18 @@
 import { useSelector } from 'react-redux';
 
-import { selectTodo } from 'features/todo/selectors';
+import { selectFilteredTodos } from 'features/todo/selectors';
+import { Todo } from 'features/todo/reducers';
 
 import { TodoItem } from '../TodoItem/TodoItem';
 
 import './TodoList.scss';
 
 export const TodoList = () => {
-  const { todos, filter } = useSelector(selectTodo);
+  const todos: Todo[] = useSelector(selectFilteredTodos);
 
-  const all = todos.map((todo) => (
+  const renderedList = todos.map((todo) => (
     <TodoItem key={todo.id} id={todo.id} text={todo.text} done={todo.done} />
   ));
 
-  const pending = todos
-    .filter((todo) => !todo.done)
-    .map((todo) => (
-      <TodoItem key={todo.id} id={todo.id} text={todo.text} done={todo.done} />
-    ));
-
-  const completed = todos
-    .filter((todo) => todo.done)
-    .map((todo) => (
-      <TodoItem key={todo.id} id={todo.id} text={todo.text} done={todo.done} />
-    ));
-
-  return (
-    <ul className="todo-list">
-      {filter === 'all' && all}
-      {filter === 'pending' && pending}
-      {filter === 'completed' && completed}
-    </ul>
-  );
+  return <ul className="todo-list">{renderedList}</ul>;
 };
